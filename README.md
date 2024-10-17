@@ -178,10 +178,17 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 ![image](https://user-images.githubusercontent.com/36288975/233856904-99eb708a-c907-4595-9025-c9dbd89b8879.png)
 
 ## CIRCUIT DIAGRAM 
-  ![image](https://github.com/user-attachments/assets/637986c0-3c22-4145-9db3-1f8c31ea2a80)
+ ![Screenshot 2024-10-03 094014](https://github.com/user-attachments/assets/6505f3f5-78d2-43b2-9797-65e8617976ff)
 
 ## STM 32 CUBE PROGRAM :
-```PY
+```
+
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+
    while (1)
     {
 	   key();
@@ -191,6 +198,7 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 void key()
 {
+
 
 	Lcd_PortType ports[] = { GPIOA, GPIOA, GPIOA, GPIOA };
 	  Lcd_PinType pins[] = {GPIO_PIN_3, GPIO_PIN_2, GPIO_PIN_1, GPIO_PIN_0};
@@ -208,7 +216,7 @@ void key()
 	 col4 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7);
 	 if(!col1)
 	 {
-	 	   		   	  	 		  Lcd_cursor(&lcd, 0,1);
+Lcd_cursor(&lcd, 0,1);
 	 	   		   	  	 	  	  Lcd_string(&lcd, "Key 7\n");
  	 	   		   	  	 	  	  col1=1;
 	 }
@@ -338,14 +346,14 @@ void key()
 	   		   	  	 		  Lcd_string(&lcd, "No Key pressed\n");
 	   		   	  	 }
  }
+
 ```
-
-
 ## Output screen shots of proteus  :
-  ![image](https://github.com/user-attachments/assets/f2e63168-1cf3-4f75-a3d3-b4e2f5d083f2)
+![Screenshot (303)](https://github.com/user-attachments/assets/c48a6ff2-9cce-44e2-9272-9852ccb5945d)
  
- ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
-  ![image](https://github.com/user-attachments/assets/f3715070-b083-40f2-aa34-bfe2dc7818c2)
+## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
+ ![Screenshot 2024-10-03 091016](https://github.com/user-attachments/assets/945c14fe-bb69-403e-b386-dcee442eeb13)
+
  
 ## Result :
 Interfacing a 4x4 keypad with ARM microcontroller are simulated in proteus and the results are verified.
